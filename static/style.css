@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #333;
+}
+
+.nav {
+    background: #2c3e50;
+    padding: 14px 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 15px;
+}
+
+.container {
+    width: 90%;
+    margin: 25px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.login-box {
+    width: 420px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+}
+
+.login-box h2 {
+    text-align: center;
+    font-size: 22px;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+}
+
+input, select, textarea {
+    width: 260px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.tips {
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.card {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 9px;
+    text-align: center;
+}
+
+th {
+    background: #ecf0f1;
+}
+
+.form-box {
+    margin-top: 20px;
+}

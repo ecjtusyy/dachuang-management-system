@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>项目列表</h2>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>项目名称</th>
+        <th>负责人</th>
+        <th>指导教师</th>
+        <th>类型</th>
+        <th>等级</th>
+        <th>状态</th>
+        <th>预算</th>
+        <th>已用经费</th>
+        <th>申报时间</th>
+    </tr>
+
+    {% for p in projects %}
+    <tr>
+        <td>{{ p.project_id }}</td>
+        <td>{{ p.project_name }}</td>
+        <td>{{ p.leader_name }}</td>
+        <td>{{ p.teacher_name }}</td>
+        <td>{{ p.project_type }}</td>
+        <td>{{ p.project_level }}</td>
+        <td>{{ p.status }}</td>
+        <td>{{ p.budget }}</td>
+        <td>{{ p.used_budget }}</td>
+        <td>{{ p.apply_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>系统首页</h2>
+
+<div class="card">
+    <p>当前用户：{{ username }}</p>
+    <p>用户角色：{{ role }}</p>
+</div>
+
+<div class="card">
+    <h3>系统功能说明</h3>
+    <ul>
+        <li>学生：项目申报、进度报告、经费报销、成果提交</li>
+        <li>教师/专家：项目评审、进度审核、结题意见</li>
+        <li>管理员：用户管理、项目立项、经费审批、成果归档</li>
+    </ul>
+</div>
+{% endblock %}

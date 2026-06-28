@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>项目申报</h2>
+
+<form method="post" class="form-box">
+    <p>
+        <label>项目名称</label>
+        <input type="text" name="project_name" required>
+    </p>
+
+    <p>
+        <label>指导教师</label>
+        <select name="teacher_id" required>
+            {% for t in teachers %}
+                <option value="{{ t.teacher_id }}">{{ t.name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+
+    <p>
+        <label>项目类型</label>
+        <select name="project_type" required>
+            <option value="创新训练">创新训练</option>
+            <option value="创业训练">创业训练</option>
+            <option value="创业实践">创业实践</option>
+        </select>
+    </p>
+
+    <p>
+        <label>申请预算</label>
+        <input type="number" name="budget" min="0" step="0.01" required>
+    </p>
+
+    <p>
+        <label>项目简介</label>
+        <textarea name="description" rows="5" required></textarea>
+    </p>
+
+    <button type="submit">提交申报</button>
+</form>
+{% endblock %}
