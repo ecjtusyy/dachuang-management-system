@@ -8,12 +8,31 @@
     <p>用户角色：{{ role }}</p>
 </div>
 
+<div class="stats">
+    <div class="stat-box">
+        <h3>{{ project_count }}</h3>
+        <p>项目总数</p>
+    </div>
+    <div class="stat-box">
+        <h3>{{ progress_count }}</h3>
+        <p>进度报告</p>
+    </div>
+    <div class="stat-box">
+        <h3>{{ expense_count }}</h3>
+        <p>经费记录</p>
+    </div>
+    <div class="stat-box">
+        <h3>{{ achievement_count }}</h3>
+        <p>成果记录</p>
+    </div>
+</div>
+
 <div class="card">
     <h3>系统功能说明</h3>
     <ul>
         <li>学生：项目申报、进度报告、经费报销、成果提交</li>
-        <li>教师/专家：项目评审、进度审核、结题意见</li>
-        <li>管理员：用户管理、项目立项、经费审批、成果归档</li>
+        <li>教师/专家：项目评审、进度审核</li>
+        <li>管理员：项目立项、经费审批、结题归档、日志查看</li>
     </ul>
 </div>
 {% endblock %}

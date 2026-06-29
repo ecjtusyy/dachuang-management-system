@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>提交经费报销</h2>
+
+<form method="post" class="form-box">
+    <p>
+        <label>所属项目</label>
+        <select name="project_id" required>
+            {% for p in projects %}
+                <option value="{{ p.project_id }}">{{ p.project_name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+
+    <p>
+        <label>报销类型</label>
+        <select name="expense_type">
+            <option value="材料费">材料费</option>
+            <option value="打印费">打印费</option>
+            <option value="实验耗材费">实验耗材费</option>
+            <option value="竞赛报名费">竞赛报名费</option>
+            <option value="其他">其他</option>
+        </select>
+    </p>
+
+    <p>
+        <label>报销金额</label>
+        <input type="number" name="amount" min="0.01" step="0.01" required>
+    </p>
+
+    <p>
+        <label>用途说明</label>
+        <textarea name="description" rows="5" required></textarea>
+    </p>
+
+    <button type="submit">提交报销</button>
+</form>
+{% endblock %}

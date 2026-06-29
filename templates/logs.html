@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>操作日志</h2>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>角色</th>
+        <th>操作内容</th>
+        <th>操作时间</th>
+    </tr>
+
+    {% for l in logs %}
+    <tr>
+        <td>{{ l.log_id }}</td>
+        <td>{{ l.username }}</td>
+        <td>{{ l.role }}</td>
+        <td>{{ l.action }}</td>
+        <td>{{ l.operation_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

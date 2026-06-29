@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>提交项目成果</h2>
+
+<form method="post" class="form-box">
+    <p>
+        <label>所属项目</label>
+        <select name="project_id" required>
+            {% for p in projects %}
+                <option value="{{ p.project_id }}">{{ p.project_name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+
+    <p>
+        <label>成果类型</label>
+        <select name="achievement_type">
+            <option value="论文">论文</option>
+            <option value="专利">专利</option>
+            <option value="软件著作权">软件著作权</option>
+            <option value="竞赛获奖">竞赛获奖</option>
+            <option value="其他">其他</option>
+        </select>
+    </p>
+
+    <p>
+        <label>成果名称</label>
+        <input type="text" name="achievement_name" required>
+    </p>
+
+    <p>
+        <label>成果日期</label>
+        <input type="date" name="achievement_date" required>
+    </p>
+
+    <p>
+        <label>成果说明</label>
+        <textarea name="description" rows="5" required></textarea>
+    </p>
+
+    <button type="submit">提交成果</button>
+</form>
+{% endblock %}

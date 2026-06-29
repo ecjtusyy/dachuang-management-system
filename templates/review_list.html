@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>项目列表</h2>
+<h2>项目评审</h2>
 
 <table>
     <tr>
@@ -12,9 +12,6 @@
         <th>类型</th>
         <th>等级</th>
         <th>状态</th>
-        <th>预算</th>
-        <th>已用经费</th>
-        <th>申报时间</th>
         <th>操作</th>
     </tr>
 
@@ -27,11 +24,8 @@
         <td>{{ p.project_type }}</td>
         <td>{{ p.project_level }}</td>
         <td>{{ p.status }}</td>
-        <td>{{ p.budget }}</td>
-        <td>{{ p.used_budget }}</td>
-        <td>{{ p.apply_time }}</td>
         <td>
-            <a class="btn-small" href="/projects/{{ p.project_id }}/finish">结题</a>
+            <a class="btn-small" href="/reviews/{{ p.project_id }}">评审</a>
         </td>
     </tr>
     {% endfor %}

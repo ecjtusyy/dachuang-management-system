@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>提交进度报告</h2>
+
+<form method="post" class="form-box">
+    <p>
+        <label>所属项目</label>
+        <select name="project_id" required>
+            {% for p in projects %}
+                <option value="{{ p.project_id }}">{{ p.project_name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+
+    <p>
+        <label>报告标题</label>
+        <input type="text" name="report_title" required>
+    </p>
+
+    <p>
+        <label>报告类型</label>
+        <select name="report_type">
+            <option value="月度报告">月度报告</option>
+            <option value="季度报告">季度报告</option>
+            <option value="中期报告">中期报告</option>
+        </select>
+    </p>
+
+    <p>
+        <label>报告内容</label>
+        <textarea name="content" rows="6" required></textarea>
+    </p>
+
+    <button type="submit">提交报告</button>
+</form>
+{% endblock %}

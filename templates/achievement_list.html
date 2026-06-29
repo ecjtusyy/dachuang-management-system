@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>项目成果管理</h2>
+
+<p>
+    <a class="btn-small" href="/achievements/add">提交项目成果</a>
+</p>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>项目名称</th>
+        <th>负责人</th>
+        <th>成果类型</th>
+        <th>成果名称</th>
+        <th>成果日期</th>
+        <th>项目状态</th>
+        <th>说明</th>
+    </tr>
+
+    {% for a in achievements %}
+    <tr>
+        <td>{{ a.achievement_id }}</td>
+        <td>{{ a.project_name }}</td>
+        <td>{{ a.leader_name }}</td>
+        <td>{{ a.achievement_type }}</td>
+        <td>{{ a.achievement_name }}</td>
+        <td>{{ a.achievement_date }}</td>
+        <td>{{ a.status }}</td>
+        <td>{{ a.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
