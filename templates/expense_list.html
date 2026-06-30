@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>经费报销管理</h2>
+
+<p>
+    <a class="btn-small" href="/expenses/add">提交报销申请</a>
+</p>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>项目名称</th>
+        <th>负责人</th>
+        <th>报销类型</th>
+        <th>金额</th>
+        <th>状态</th>
+        <th>申请时间</th>
+        <th>审批时间</th>
+        <th>说明</th>
+        <th>审批</th>
+    </tr>
+
+    {% for e in expenses %}
+    <tr>
+        <td>{{ e.expense_id }}</td>
+        <td>{{ e.project_name }}</td>
+        <td>{{ e.leader_name }}</td>
+        <td>{{ e.expense_type }}</td>
+        <td>{{ e.amount }}</td>
+        <td>{{ e.status }}</td>
+        <td>{{ e.apply_time }}</td>
+        <td>{{ e.approve_time }}</td>
+        <td>{{ e.description }}</td>
+        <td>
+            <a class="btn-small" href="/expenses/{{ e.expense_id }}/approve">通过</a>
+            <a class="btn-small danger" href="/expenses/{{ e.expense_id }}/reject">驳回</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

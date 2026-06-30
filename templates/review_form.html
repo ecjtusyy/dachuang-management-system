@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>项目评审</h2>
+
+<div class="card">
+    <p>项目名称：{{ project.project_name }}</p>
+    <p>负责人：{{ project.leader_name }}</p>
+    <p>指导教师：{{ project.teacher_name }}</p>
+    <p>项目类型：{{ project.project_type }}</p>
+    <p>当前等级：{{ project.project_level }}</p>
+    <p>当前状态：{{ project.status }}</p>
+    <p>项目简介：{{ project.description }}</p>
+</div>
+
+<form method="post" class="form-box">
+    <p>
+        <label>评分</label>
+        <input type="number" name="score" min="0" max="100" required>
+    </p>
+
+    <p>
+        <label>立项等级</label>
+        <select name="project_level">
+            <option value="校级">校级</option>
+            <option value="省级">省级</option>
+            <option value="国家级">国家级</option>
+        </select>
+    </p>
+
+    <p>
+        <label>评审结果</label>
+        <select name="review_result">
+            <option value="通过">通过</option>
+            <option value="修改后通过">修改后通过</option>
+            <option value="驳回">驳回</option>
+        </select>
+    </p>
+
+    <p>
+        <label>评审意见</label>
+        <textarea name="opinion" rows="5" required></textarea>
+    </p>
+
+    <button type="submit">提交评审</button>
+</form>
+{% endblock %}

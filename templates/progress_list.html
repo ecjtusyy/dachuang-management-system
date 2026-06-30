@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>进度报告管理</h2>
+
+<p>
+    <a class="btn-small" href="/progress/add">提交进度报告</a>
+</p>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>项目名称</th>
+        <th>负责人</th>
+        <th>报告标题</th>
+        <th>报告类型</th>
+        <th>状态</th>
+        <th>提交时间</th>
+        <th>审核</th>
+    </tr>
+
+    {% for r in reports %}
+    <tr>
+        <td>{{ r.report_id }}</td>
+        <td>{{ r.project_name }}</td>
+        <td>{{ r.leader_name }}</td>
+        <td>{{ r.report_title }}</td>
+        <td>{{ r.report_type }}</td>
+        <td>{{ r.status }}</td>
+        <td>{{ r.submit_time }}</td>
+        <td>
+            <a class="btn-small" href="/progress/{{ r.report_id }}/audit/已通过">通过</a>
+            <a class="btn-small danger" href="/progress/{{ r.report_id }}/audit/已驳回">驳回</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
